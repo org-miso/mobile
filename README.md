@@ -16,7 +16,7 @@
     https://github.com/org-miso/mobile.git
     ```
     
-- Sincronizar gradle desde el amdroid studio
+- Sincronizar gradle desde el Android studio
     ![1](https://user-images.githubusercontent.com/3527273/200212909-def42257-58ec-4316-b3e8-fc6db2bff47e.jpg)
     
 - Ejecutar aplicación
