@@ -3,7 +3,7 @@
 
 ## Pre requisitos
 
-- Haber instalado
+-- Haber instalado
 -- pip install requests
 
 ## Instrucciones de ejecución
