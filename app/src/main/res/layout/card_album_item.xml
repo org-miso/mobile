@@ -62,7 +62,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent">
 
-                        <com.google.android.material.imageview.ShapeableImageView
+                        <ImageView
                             android:id="@+id/imageIconAlbum"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
@@ -71,7 +71,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             android:contentDescription="@string/cover_image"
                             android:layout_marginLeft="10dp"
-                            app:shapeAppearanceOverlay="@style/CornerCut"
                             />
 
                         <TextView
@@ -103,6 +102,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="@+id/textViewAlbum"/>
+
 
             </LinearLayout>
 
