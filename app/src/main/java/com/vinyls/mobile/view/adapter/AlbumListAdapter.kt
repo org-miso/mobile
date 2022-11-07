@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -17,13 +18,34 @@ class AlbumListAdapter(
     val context: Context
 ) : RecyclerView.Adapter<AlbumListAdapter.ViewHolder>() {
 
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener {
+
+        fun onItemClick(position: Int)
+
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
+
     class ViewHolder(
-        val itemView: View
+        val itemView: View,
+        listener: onItemClickListener
     ):RecyclerView.ViewHolder(itemView){
+
+
+        init {
+            itemView.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
+        }
 
         fun bindItem(album: Album?) {
             var imageView = itemView.findViewById(R.id.imageAlbum) as ImageView
-            Picasso.get().load(album?.cover).into(imageView);
+            Picasso.get().load(album?.cover).into(imageView)
 
             var albumName = itemView.findViewById(R.id.textViewAlbum) as TextView
             albumName.text = album?.name
@@ -39,7 +61,7 @@ class AlbumListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.card_album_item, parent, false)
-        return  ViewHolder(view)
+        return  ViewHolder(view, mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -49,6 +71,8 @@ class AlbumListAdapter(
     override fun getItemCount(): Int {
         return list.size
     }
+
+
 
 }
 
