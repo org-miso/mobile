@@ -21,3 +21,7 @@
     
 - Ejecutar aplicación
     ![2](https://user-images.githubusercontent.com/3527273/200213091-65a27a76-bed5-432a-9649-4b43e4202357.jpg)
+
+
+## Posibles Inconvenientes
+Un posible inconveniente que se puede presentar es que debido a la falta de memoria ram la aplicación pueda fallar al tratar de ejecutar el emulador, Android Studio requiere de una alta capacidad en memoria, si no se tiene disponibilidad suficiente pueden presentarse fallos al tratar de lanzar la aplicación.
