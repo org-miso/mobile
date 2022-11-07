@@ -8,16 +8,16 @@
     tools:context=".view.MainActivity">
 
     <TextView
-        android:text="@string/albumestitle"
+        android:id="@+id/idtvtitle"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:text="@string/albumestitle"
+        android:textColor="#555555"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="#555555"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="10dp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
