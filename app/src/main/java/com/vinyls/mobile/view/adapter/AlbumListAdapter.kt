@@ -1,47 +1,31 @@
 package com.vinyls.mobile.view.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Transformation
 import com.vinyls.mobile.R
 import com.vinyls.mobile.model.Album
+import com.vinyls.mobile.view.AlbumDetailActivity
+import com.vinyls.mobile.view.MainActivity
 
 class AlbumListAdapter(
     val list:List<Album?>,
     val context: Context
 ) : RecyclerView.Adapter<AlbumListAdapter.ViewHolder>() {
 
-    private lateinit var mListener: onItemClickListener
-
-    interface onItemClickListener {
-
-        fun onItemClick(position: Int)
-
-    }
-
-    fun setOnItemClickListener(listener: onItemClickListener){
-        mListener = listener
-    }
-
-
     class ViewHolder(
-        val itemView: View,
-        listener: onItemClickListener
+        val itemView: View
     ):RecyclerView.ViewHolder(itemView){
-
-
-        init {
-            itemView.setOnClickListener{
-                listener.onItemClick(adapterPosition)
-            }
-        }
 
         fun bindItem(album: Album?) {
             var imageView = itemView.findViewById(R.id.imageAlbum) as ImageView
@@ -61,11 +45,26 @@ class AlbumListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.card_album_item, parent, false)
-        return  ViewHolder(view, mListener)
+        return  ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(list[position])
+        holder.itemView.setOnClickListener(){
+            Toast.makeText(this.context,
+                "Clicked" + list[position]?.name, Toast.LENGTH_SHORT).show()
+//            this.context.startActivity(Intent(this.context, AlbumDetailActivity::class.java))
+            val intent = Intent(this.context, AlbumDetailActivity::class.java)
+            Log.i("INFO",  list[position]?.name.toString())
+            intent.putExtra("nameAlbum", list[position]?.name)
+            intent.putExtra("coverAlbum", list[position]?.cover)
+            intent.putExtra("genreAlbum", list[position]?.genre)
+            intent.putExtra("recordLabelAlbum", list[position]?.recordLabel)
+            intent.putExtra("releaseDateAlbum", list[position]?.releaseDate)
+            intent.putExtra("descriptionAlbum", list[position]?.description)
+            this.context.startActivity(intent)
+
+        }
     }
 
     override fun getItemCount(): Int {

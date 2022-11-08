@@ -15,7 +15,7 @@
     </style>
 
     <style name="CornerCut">
-        <item name="cornerSize">10%</item>
+        <item name="cornerSize">50%</item>
     </style>
 
     <style name="Theme.Vinyls.NoActionBar">

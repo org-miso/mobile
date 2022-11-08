@@ -4,11 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vinyls.mobile.R
-import com.vinyls.mobile.databinding.ActivityAlbumDetailBinding
 import com.vinyls.mobile.databinding.ActivityMainBinding
 import com.vinyls.mobile.model.Album
 import com.vinyls.mobile.view.adapter.AlbumListAdapter
@@ -35,46 +36,28 @@ class MainActivity : AppCompatActivity() {
         albumsViewModel.getAllAlbums()
         albumsViewModel.albums.observe(this, Observer{
             albums.addAll(it)
-            adapter.setOnItemClickListener(object:AlbumListAdapter.onItemClickListener{
-                override fun onItemClick(position: Int) {
-
-                    Toast.makeText(this@MainActivity,
-                        "Clicked", Toast.LENGTH_SHORT).show()
-
-                    val intent = Intent(this@MainActivity, AlbumDetailActivity::class.java).apply {
-                        putExtra("album", it[position]?.id)
-                    }
-                    startActivity(intent)
-                }
-
-            })
             adapter.notifyDataSetChanged()
-
+            binding.loadingPanel.visibility = View.GONE
         })
+
+        binding.bottomNavigationView.menu.findItem(R.id.albums).setChecked(true)
+
 
 
 
         binding.bottomNavigationView.setOnItemSelectedListener {
-            Log.i("INFO", it.itemId.toString())
-
             when(it.itemId){
-
                 R.id.albums -> startActivity(Intent(this@MainActivity, MainActivity::class.java))
                 R.id.collections -> startActivity(Intent(this@MainActivity, CollectionActivity::class.java))
                 R.id.artists -> startActivity(Intent(this@MainActivity, ArtistActivity::class.java))
-
                 else ->{
                 }
-
             }
-
-
             true
         }
-
-
-
     }
+
+
 
 
 }
