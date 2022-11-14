@@ -1,5 +1,6 @@
 package com.vinyls.mobile.model
 
+import com.vinyls.mobile.dto.TrackDTO
 import java.util.*
 
 data class Album(var name: String? = null,
@@ -9,6 +10,8 @@ data class Album(var name: String? = null,
                  var genre: String? = null,
                  var recordLabel: String? = null,
                  var year: String? = null,
-                 var id: Int? = null
-                )
+                 var id: Int? = null,
+                 var tracks: List<Track>? = null
+
+)
 

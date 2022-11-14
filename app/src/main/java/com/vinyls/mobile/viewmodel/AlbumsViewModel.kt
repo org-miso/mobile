@@ -27,4 +27,14 @@ class AlbumsViewModel(): ViewModel() {
         }
     }
 
+    fun saveAlbum(album: AlbumDTO){
+
+        viewModelScope.launch {
+            albumRepository.saveAlbum(album)
+            Log.i("INFORMATION DEVELOPER", "Resultant: $album")
+            getAllAlbums()
+        }
+
+    }
+
 }

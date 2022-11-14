@@ -42,7 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.menu.findItem(R.id.albums).setChecked(true)
 
-
+        binding.floatingActionButton.setOnClickListener{
+            startActivity(Intent(this@MainActivity, AlbumCreateActivity::class.java))
+        }
 
 
         binding.bottomNavigationView.setOnItemSelectedListener {

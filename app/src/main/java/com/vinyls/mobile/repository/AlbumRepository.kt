@@ -6,5 +6,6 @@ interface AlbumRepository {
 
     suspend fun getAll(): List<AlbumDTO>
     fun getOneById(id: Int): AlbumDTO
+    suspend fun saveAlbum(album: AlbumDTO): AlbumDTO?
 
 }

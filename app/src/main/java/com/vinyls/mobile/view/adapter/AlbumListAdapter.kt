@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Transformation
 import com.vinyls.mobile.R
@@ -35,10 +36,13 @@ class AlbumListAdapter(
             albumName.text = album?.name
 
             var albumYear = itemView.findViewById(R.id.yearViewAlbum) as TextView
-            albumYear.text = album?.year?.substring(0,4)
+            albumYear.text = album?.year
 
             var albumDescription = itemView.findViewById(R.id.descriptionViewAlbum) as TextView
-            albumDescription.text = "Descripción: " + album?.description?.substring(0,140) + "..."
+            if(album?.description?.length!! > 140){
+                albumDescription.text = "Descripción: " + album?.description?.substring(0,140) + "..."
+            }
+
         }
 
     }
@@ -51,9 +55,6 @@ class AlbumListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(list[position])
         holder.itemView.setOnClickListener(){
-            Toast.makeText(this.context,
-                "Clicked" + list[position]?.name, Toast.LENGTH_SHORT).show()
-//            this.context.startActivity(Intent(this.context, AlbumDetailActivity::class.java))
             val intent = Intent(this.context, AlbumDetailActivity::class.java)
             Log.i("INFO",  list[position]?.name.toString())
             intent.putExtra("nameAlbum", list[position]?.name)
@@ -62,8 +63,9 @@ class AlbumListAdapter(
             intent.putExtra("recordLabelAlbum", list[position]?.recordLabel)
             intent.putExtra("releaseDateAlbum", list[position]?.releaseDate)
             intent.putExtra("descriptionAlbum", list[position]?.description)
+            intent.putExtra("idAlbum", list[position]?.id)
+            intent.putExtra("tracksAlbum", Gson().toJson(list[position]?.tracks))
             this.context.startActivity(intent)
-
         }
     }
 

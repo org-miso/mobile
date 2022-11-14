@@ -20,4 +20,5 @@
     <string name="album">Álbum</string>
     <string name="wip">En Progreso</string>
     <string name="genero">Genero:</string>
+    <string name="asociar_canci_n_al_lbum">Asociar Canción al Álbum</string>
 </resources>

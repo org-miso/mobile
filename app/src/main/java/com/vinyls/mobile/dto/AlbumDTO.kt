@@ -1,6 +1,7 @@
 package com.vinyls.mobile.dto
 
 import com.google.gson.annotations.SerializedName
+import com.vinyls.mobile.model.Track
 import java.util.*
 
 data class AlbumDTO(
@@ -23,5 +24,8 @@ data class AlbumDTO(
                     var recordLabel: String? = null,
 
                     @SerializedName("id")
-                    var id: Int? = null
+                    var id: Int? = null,
+
+                    @SerializedName("tracks")
+                    var tracks: List<TrackDTO>? = null
                 )
