@@ -1,6 +1,7 @@
 package com.vinyls.mobile.repository.impl
 
 import com.vinyls.mobile.dto.AlbumDTO
+import com.vinyls.mobile.dto.TrackDTO
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -17,6 +18,6 @@ interface VinylsAlbumsAPI {
     suspend fun saveAlbum(@Body albumDTO: AlbumDTO): AlbumDTO
 
     @POST("/albums/{albumId}/tracks")
-    suspend fun saveTrackToAlbum(@Path("albumId") albumId: Int, @Body albumDTO: AlbumDTO): AlbumDTO
+    suspend fun saveTrackToAlbum(@Path("albumId") albumId: Int, @Body trackDTO: TrackDTO): TrackDTO
 
 }

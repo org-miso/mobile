@@ -11,11 +11,15 @@ import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.vinyls.mobile.databinding.ActivityAlbumCreateBinding
 import com.vinyls.mobile.databinding.ActivityTrackCreateBinding
+import com.vinyls.mobile.dto.TrackDTO
 import com.vinyls.mobile.model.Track
+import com.vinyls.mobile.viewmodel.AlbumsViewModel
 
 class TrackCreateActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTrackCreateBinding
+
+    private var albumsViewModel = AlbumsViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +35,12 @@ class TrackCreateActivity : AppCompatActivity() {
         Log.i("TAG DEV", albumId.toString())
 
         binding.buttonSave.setOnClickListener{
-            val track = Track()
-            track.name = binding.editTextName.toString()
-            track.duration = binding.editTextHours.toString() + ":" + binding.editTextMinutes.toString()
-            Log.i("INFO DEVX", binding.editTextName.toString()  + "  " + track.duration.toString())
+            val track = TrackDTO()
+            track.name = binding.editTextName.text.toString()
+            track.duration = binding.editTextHours.text.toString() + ":" + binding.editTextMinutes.text.toString()
+            Log.i("INFO DEVX", binding.editTextName.text.toString()  + "  " + track.duration.toString())
+            albumsViewModel.saveTrack(albumId, track)
+            startActivity(Intent(this@TrackCreateActivity, MainActivity::class.java))
         }
 
     }
