@@ -9,7 +9,7 @@ class TrackUtil {
 
     fun DTOtoEntity(entity: TrackDTO): Track?{
         var response : Track? = Track()
-//        response?.id = entity?.id
+        response?.id = entity?.id
         response?.name = entity?.name
         response?.duration = entity?.duration
 

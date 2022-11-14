@@ -28,7 +28,6 @@ class MusicianListAdapter(
             var titleName = itemView.findViewById(R.id.nameMusicianView) as TextView
             titleName.text = item?.name
 
-
         }
 
     }
