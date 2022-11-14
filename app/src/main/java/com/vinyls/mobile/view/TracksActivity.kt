@@ -30,11 +30,13 @@ class TracksActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        binding.buttonAddTrack.setOnClickListener{
-            startActivity(Intent(this@TracksActivity, TrackCreateActivity::class.java))
-        }
-
         val b = intent.extras
+
+        binding.buttonAddTrack.setOnClickListener{
+            val intent = Intent(this@TracksActivity, TrackCreateActivity::class.java)
+            intent.putExtra("idAlbum", b!!.getInt("idAlbum"))
+            startActivity(intent)
+        }
 
         Log.i("HEY", b!!.getInt("idAlbum").toString())
         Log.i("HEY", b!!.getString("tracksAlbum").toString())
@@ -45,6 +47,8 @@ class TracksActivity : AppCompatActivity() {
         Log.i("INFO DEVELOPER", "$albumID:$tracks")
 
         list.addAll(tracks)
+
+
     }
 
 

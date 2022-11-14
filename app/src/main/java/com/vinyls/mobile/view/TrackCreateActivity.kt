@@ -1,5 +1,6 @@
 package com.vinyls.mobile.view
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,11 @@ class TrackCreateActivity : AppCompatActivity() {
 
         binding.editTextHours.setRawInputType(Configuration.KEYBOARDHIDDEN_YES)
         binding.editTextMinutes.setRawInputType(Configuration.KEYBOARDHIDDEN_YES)
+
+        val b = intent.extras
+
+        val albumId = b!!.getInt("idAlbum")
+        Log.i("TAG DEV", albumId.toString())
 
         binding.buttonSave.setOnClickListener{
             val track = Track()
