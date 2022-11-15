@@ -1,6 +1,8 @@
 package com.vinyls.mobile
 
+import android.view.View
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,15 +21,49 @@ class ArtistActivityTest {
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testTitleDisplayArtist(){
-        Espresso.onView(ViewMatchers.withText("Álbumes"))
-            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+    fun testViewListSongsFirstAlbum(){
+        Thread.sleep(2500)
+        Espresso.onView(ViewMatchers.withId(R.id.recyclerViewAlbums))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
+
+        Espresso.onView(ViewMatchers.withId(R.id.buttonSong))
+            .perform(ViewActions.click())
+        Thread.sleep(2500)
+
     }
 
     @Test
-    fun testViewDetailArtist(){
-        println(R.id.recyclerViewAlbums)
-        Espresso.onView(ViewMatchers.withId(R.id.recyclerViewAlbums)).
-        check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+    fun testViewListSongsTitle(){
+        Thread.sleep(2500)
+        Espresso.onView(ViewMatchers.withId(R.id.recyclerViewAlbums))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
+
+        Espresso.onView(ViewMatchers.withId(R.id.buttonSong))
+            .perform(ViewActions.click())
+        Thread.sleep(2500)
+
+        Espresso.onView(ViewMatchers.withId(com.vinyls.mobile.R.id.title))
+            .check(ViewAssertions.matches(ViewMatchers.withText("Canciones")))
+
     }
+
+    @Test
+    fun testViewListSongsScroll(){
+        Thread.sleep(2500)
+        Espresso.onView(ViewMatchers.withId(R.id.recyclerViewAlbums))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
+
+        Espresso.onView(ViewMatchers.withId(R.id.buttonSong))
+            .perform(ViewActions.click())
+        Thread.sleep(2500)
+
+        Espresso.onView(ViewMatchers.withId(R.id.recyclerViewSongs))
+            .perform(ViewActions.swipeDown())
+        Thread.sleep(2500)
+
+    }
+
 }
