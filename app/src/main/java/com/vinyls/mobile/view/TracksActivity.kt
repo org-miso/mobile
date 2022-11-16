@@ -27,8 +27,8 @@ class TracksActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var adapter = TrackListAdapter(list, this)
-        binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerViewSongs.adapter = adapter
+        binding.recyclerViewSongs.layoutManager = LinearLayoutManager(this)
 
         val b = intent.extras
 
