@@ -55,20 +55,20 @@ class AlbumDetailActivityTests {
 
         Thread.sleep(2500)
 
-        onView(withId(R.id.recordLabel)).check(matches(withText("Electra")))
+        onView(withId(R.id.recordLabel)).check(matches(withText("Elektra")))
 
     }
 
     @Test
     fun testViewImageFirstAlbumInList(){
-        Thread.sleep(2500)
+        Thread.sleep(5500)
         onView(withId(R.id.recyclerViewAlbums))
             .perform(click())
         Thread.sleep(5000)
 
         onView(withId(R.id.imageAlbum)).check(matches(isDisplayed()))
 
-        Thread.sleep(2500)
+        Thread.sleep(5500)
 
     }
 

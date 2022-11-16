@@ -1,6 +1,5 @@
 package com.vinyls.mobile
 
-import android.view.View
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
@@ -15,7 +14,7 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class ArtistActivityTest {
+class AlbumDetailActivityTests2 {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
@@ -49,20 +48,22 @@ class ArtistActivityTest {
 
     }
 
+
+
     @Test
     fun testViewListSongsScroll(){
-        Thread.sleep(2500)
+        Thread.sleep(5500)
         Espresso.onView(ViewMatchers.withId(R.id.recyclerViewAlbums))
             .perform(ViewActions.click())
         Thread.sleep(5500)
 
         Espresso.onView(ViewMatchers.withId(R.id.buttonSong))
             .perform(ViewActions.click())
-        Thread.sleep(2500)
+        Thread.sleep(5500)
 
         Espresso.onView(ViewMatchers.withId(R.id.recyclerViewSongs))
             .perform(ViewActions.swipeDown())
-        Thread.sleep(2500)
+        Thread.sleep(5500)
 
     }
 
