@@ -38,13 +38,10 @@ class TracksActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        Log.i("HEY", b!!.getInt("idAlbum").toString())
-        Log.i("HEY", b!!.getString("tracksAlbum").toString())
 
         val itemType = object : TypeToken<List<Track>>() {}.type
         val tracks = Gson().fromJson<List<Track>>(b!!.getString("tracksAlbum"), itemType)
         val albumID = b!!.getInt("idAlbum")
-        Log.i("INFO DEVELOPER", "$albumID:$tracks")
 
         list.addAll(tracks)
 

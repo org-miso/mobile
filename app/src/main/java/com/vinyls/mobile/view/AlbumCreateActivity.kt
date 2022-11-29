@@ -42,7 +42,6 @@ class AlbumCreateActivity : AppCompatActivity() {
         binding.editTextGenre.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 genre = genres[p2];
-                Log.i("INFO DEV", genre)
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
 
@@ -53,7 +52,6 @@ class AlbumCreateActivity : AppCompatActivity() {
         binding.editTextRecordLabel.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 recordLabel = recordsLabels[p2];
-                Log.i("INFO DEV", recordLabel)
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
 

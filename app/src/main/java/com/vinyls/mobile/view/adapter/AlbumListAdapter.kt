@@ -56,7 +56,6 @@ class AlbumListAdapter(
         holder.bindItem(list[position])
         holder.itemView.setOnClickListener(){
             val intent = Intent(this.context, AlbumDetailActivity::class.java)
-            Log.i("INFO",  list[position]?.name.toString())
             intent.putExtra("nameAlbum", list[position]?.name)
             intent.putExtra("coverAlbum", list[position]?.cover)
             intent.putExtra("genreAlbum", list[position]?.genre)
