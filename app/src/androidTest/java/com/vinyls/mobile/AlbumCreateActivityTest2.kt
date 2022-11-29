@@ -1,7 +1,7 @@
 package com.vinyls.mobile
 
 import androidx.test.espresso.Espresso
-import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -13,21 +13,16 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class ArtistActivityTest {
+class AlbumCreateActivityTest2 {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testTitleDisplayArtist(){
-        Espresso.onView(ViewMatchers.withText("Álbumes"))
-            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-    }
-
-    @Test
-    fun testViewDetailArtist(){
-        println(R.id.recyclerViewAlbums)
-        Espresso.onView(ViewMatchers.withId(R.id.recyclerViewAlbums)).
-        check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+    fun testViewCreateAlbumViewButton() {
+        Thread.sleep(2500)
+        Espresso.onView(ViewMatchers.withId(R.id.floatingActionButton))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
     }
 }
