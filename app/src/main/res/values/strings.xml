@@ -22,4 +22,9 @@
     <string name="genero">Genero:</string>
     <string name="asociar_canci_n_al_lbum">Asociar Canción al Álbum</string>
     <string name="coleccionistas">Coleccionistas</string>
+    <string name="nombre">Nombre</string>
+    <string name="t_tulo">Título</string>
+    <string name="fecha">Fecha</string>
+    <string name="cover_url_imagen">Cover - URL Imagen</string>
+    <string name="descripci_n">Descripción</string>
 </resources>
