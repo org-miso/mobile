@@ -32,13 +32,11 @@ class TrackCreateActivity : AppCompatActivity() {
         val b = intent.extras
 
         val albumId = b!!.getInt("idAlbum")
-        Log.i("TAG DEV", albumId.toString())
 
         binding.buttonSave.setOnClickListener{
             val track = TrackDTO()
             track.name = binding.editTextName.text.toString()
             track.duration = binding.editTextHours.text.toString() + ":" + binding.editTextMinutes.text.toString()
-            Log.i("INFO DEVX", binding.editTextName.text.toString()  + "  " + track.duration.toString())
             albumsViewModel.saveTrack(albumId, track)
             startActivity(Intent(this@TrackCreateActivity, MainActivity::class.java))
         }

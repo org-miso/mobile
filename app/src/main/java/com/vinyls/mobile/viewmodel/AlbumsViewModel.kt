@@ -22,7 +22,6 @@ class AlbumsViewModel(): ViewModel() {
         viewModelScope.launch {
             var albumsData: List<AlbumDTO>? = albumRepository.getAll()
             if (!albumsData.isNullOrEmpty()){
-                Log.i("INFORMATION DEVELOPER", "Resultant: $albumsData")
                 albums.postValue(albumsData!!.asSequence().map { a -> AlbumUtil().DTOtoEntity(a) }.toList())
             }
         }
@@ -32,7 +31,6 @@ class AlbumsViewModel(): ViewModel() {
 
         viewModelScope.launch {
             albumRepository.saveAlbum(album)
-            Log.i("INFORMATION DEVELOPER", "Resultant: $album")
             getAllAlbums()
         }
 
@@ -42,7 +40,6 @@ class AlbumsViewModel(): ViewModel() {
 
         viewModelScope.launch {
             val result = albumRepository.saveTrack(albumId, trackDTO)
-            Log.i("INFORMATION DEVELOPER", "Resultant: $result")
             getAllAlbums()
         }
 
