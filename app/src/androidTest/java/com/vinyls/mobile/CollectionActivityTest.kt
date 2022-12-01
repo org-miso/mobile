@@ -1,6 +1,5 @@
 package com.vinyls.mobile
 
-
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
@@ -20,33 +19,54 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class AlbumActivityTest {
+class CollectionActivityTest {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testTitleDisplayAlbum(){
-        onView(withText("Álbumes")).check(matches(isDisplayed()))
-        Thread.sleep(5000)
+    fun testViewListCollector(){
+        Thread.sleep(5500)
+
+        onView(withId(R.id.collections))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
+
+        onView(withId(R.id.txtCollect))
+            .check(matches(withText("Coleccionistas")))
+        Thread.sleep(5500)
     }
 
-    @Test
-    fun testListAlbum(){
-        println(R.id.recyclerViewAlbums)
-        onView(withId(R.id.recyclerViewAlbums)).
-                check(matches(isDisplayed()))
-        Thread.sleep(5000)
-    }
 
     @Test
-    fun testScrollListAlbums() {
-        Thread.sleep(5000)
-        onView(withId(R.id.recyclerViewAlbums)).perform(
+    fun testListCollector(){
+        Thread.sleep(5500)
+
+        onView(withId(R.id.collections))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
+
+        onView(withId(R.id.recyclerViewCollectors))
+            .check(matches(isDisplayed()))
+        Thread.sleep(5500)
+    }
+
+
+    @Test
+    fun testScrollListCollectors() {
+        Thread.sleep(5500)
+
+        onView(withId(R.id.collections))
+            .perform(ViewActions.click())
+        Thread.sleep(5500)
+
+        onView(withId(R.id.recyclerViewCollectors)).perform(
             ScrollToBottomAction()
         )
         Thread.sleep(5000)
-  }
+    }
+
+
 
 
 
