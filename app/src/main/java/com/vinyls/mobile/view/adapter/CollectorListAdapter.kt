@@ -1,6 +1,7 @@
 package com.vinyls.mobile.view.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.vinyls.mobile.R
 import com.vinyls.mobile.model.Album
 import com.vinyls.mobile.model.Collector
 import com.vinyls.mobile.model.Musician
+import com.vinyls.mobile.view.AlbumDetailActivity
+import com.vinyls.mobile.view.CollectorDetailActivity
 
 class CollectorListAdapter(
         val list:List<Collector?>,
@@ -43,6 +47,15 @@ class CollectorListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(list[position])
+        holder.itemView.setOnClickListener(){
+            val intent = Intent(this.context, CollectorDetailActivity::class.java)
+            intent.putExtra("name", list[position]?.name)
+            intent.putExtra("id", list[position]?.id)
+            intent.putExtra("telephone", list[position]?.telephone)
+            intent.putExtra("email", list[position]?.email)
+//            intent.putExtra("tracksAlbum", Gson().toJson(list[position]?.tracks))
+            this.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
