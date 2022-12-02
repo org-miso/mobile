@@ -7,7 +7,7 @@ object RetrofitHelper {
 
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://back-vinilos-miso.herokuapp.com/")
+            .baseUrl("https://back-vinilos.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
