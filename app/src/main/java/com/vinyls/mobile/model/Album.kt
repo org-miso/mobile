@@ -1,8 +1,5 @@
 package com.vinyls.mobile.model
 
-import com.vinyls.mobile.dto.TrackDTO
-import java.util.*
-
 data class Album(var name: String? = null,
                  var cover: String? = null,
                  var releaseDate: String? = null,

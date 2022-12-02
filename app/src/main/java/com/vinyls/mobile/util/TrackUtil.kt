@@ -1,8 +1,6 @@
 package com.vinyls.mobile.util
 
-import com.vinyls.mobile.dto.AlbumDTO
 import com.vinyls.mobile.dto.TrackDTO
-import com.vinyls.mobile.model.Album
 import com.vinyls.mobile.model.Track
 
 class TrackUtil {

@@ -8,12 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vinyls.mobile.R
 import com.vinyls.mobile.databinding.ActivityArtistBinding
-import com.vinyls.mobile.databinding.ActivityMainBinding
-import com.vinyls.mobile.model.Album
 import com.vinyls.mobile.model.Musician
-import com.vinyls.mobile.view.adapter.AlbumListAdapter
 import com.vinyls.mobile.view.adapter.MusicianListAdapter
-import com.vinyls.mobile.viewmodel.AlbumsViewModel
 import com.vinyls.mobile.viewmodel.MusicianViewModel
 
 class ArtistActivity : AppCompatActivity() {

@@ -2,7 +2,6 @@ package com.vinyls.mobile.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.vinyls.mobile.databinding.ActivityAlbumDetailBinding
 import com.vinyls.mobile.databinding.ActivityCollectorDetailBinding
 
 class CollectorDetailActivity : AppCompatActivity() {

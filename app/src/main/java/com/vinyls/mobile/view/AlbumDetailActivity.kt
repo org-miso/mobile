@@ -2,15 +2,10 @@ package com.vinyls.mobile.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.squareup.picasso.Picasso
-import com.vinyls.mobile.R
 import com.vinyls.mobile.databinding.ActivityAlbumDetailBinding
-import com.vinyls.mobile.model.Track
 
 class AlbumDetailActivity : AppCompatActivity() {
 
