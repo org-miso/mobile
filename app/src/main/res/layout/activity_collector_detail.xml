@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CollectorDetailActivity">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textAlignment="center"
+        android:textColor="#555555"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="45sp"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toTopOf="@id/name"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textAlignment="textStart"
+            android:textColor="#888888"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdfasdf@email.com"
+            android:textAlignment="textStart"
+            android:textColor="#888888"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        app:layout_constraintStart_toStartOf="@id/layout2"
+        app:layout_constraintTop_toTopOf="@id/layout2"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefono"
+            android:textAlignment="textStart"
+            android:textColor="#888888"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+123456413"
+            android:textAlignment="textStart"
+            android:textColor="#888888"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/album"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Álbumes"
+        android:textAlignment="center"
+        android:textColor="#555555"
+        android:textSize="30sp"
+        android:layout_marginTop="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/layout3"
+        app:layout_constraintStart_toStartOf="@+id/layout3"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAlbums"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/album"
+        tools:layout_editor_absoluteX="53dp"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/buttonSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/corners"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

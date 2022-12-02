@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Collections"
+    <item android:title="@string/coleccionistas"
         android:id="@+id/collections"
         android:icon="@drawable/collections_icon"
         />
 
-    <item android:title="Artists"
+    <item android:title="@string/artistas"
         android:id="@+id/artists"
         android:icon="@drawable/artists_icon"/>
 
-    <item android:title="Albums"
+    <item android:title="@string/album_s"
         android:id="@+id/albums"
         android:icon="@drawable/albums_icon"/>
 
