@@ -7,7 +7,7 @@
     tools:context=".view.CollectionActivity">
 
     <TextView
-        android:text="@string/coleccionistas"
+        android:id="@+id/txtCollect"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:text="@string/coleccionistas"
