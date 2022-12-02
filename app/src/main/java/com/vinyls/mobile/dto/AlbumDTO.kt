@@ -1,8 +1,6 @@
 package com.vinyls.mobile.dto
 
 import com.google.gson.annotations.SerializedName
-import com.vinyls.mobile.model.Track
-import java.util.*
 
 data class AlbumDTO(
                     @SerializedName("name")
