@@ -24,4 +24,9 @@
     <string name="coleccionistas">Coleccionistas</string>
     <string name="volver">Volver</string>
     <string name="album_s">Albumés</string>
+    <string name="t_tulo" />
+    <string name="fecha" />
+    <string name="cover_url_imagen" />
+    <string name="descripci_n" />
+    <string name="nombre" />
 </resources>
