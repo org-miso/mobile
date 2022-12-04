@@ -15,6 +15,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
+        android:layout_marginLeft="15dp"
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="10dp" />
 
