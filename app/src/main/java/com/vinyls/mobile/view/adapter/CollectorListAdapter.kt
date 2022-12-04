@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.vinyls.mobile.R
 import com.vinyls.mobile.model.Collector
 import com.vinyls.mobile.view.CollectorDetailActivity
@@ -46,7 +47,7 @@ class CollectorListAdapter(
             intent.putExtra("id", list[position]?.id)
             intent.putExtra("telephone", list[position]?.telephone)
             intent.putExtra("email", list[position]?.email)
-//            intent.putExtra("tracksAlbum", Gson().toJson(list[position]?.tracks))
+            intent.putExtra("collectorAlbums", Gson().toJson(list[position]?.collectorAlbums))
             this.context.startActivity(intent)
         }
     }

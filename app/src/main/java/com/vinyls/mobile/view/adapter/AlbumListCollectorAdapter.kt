@@ -14,10 +14,10 @@ import com.vinyls.mobile.R
 import com.vinyls.mobile.model.Album
 import com.vinyls.mobile.view.AlbumDetailActivity
 
-class AlbumListAdapter(
+class AlbumListCollectorAdapter(
     val list:List<Album?>,
     val context: Context
-) : RecyclerView.Adapter<AlbumListAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<AlbumListCollectorAdapter.ViewHolder>() {
 
     class ViewHolder(
         val itemView: View
@@ -43,7 +43,7 @@ class AlbumListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.card_album_item, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.card_album_item_collector, parent, false)
         return  ViewHolder(view)
     }
 

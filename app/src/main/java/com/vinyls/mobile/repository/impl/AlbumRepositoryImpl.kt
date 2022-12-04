@@ -15,8 +15,9 @@ class AlbumRepositoryImpl : AlbumRepository {
         return response.body() ?: emptyList()
     }
 
-    override fun getOneById(id: Int): AlbumDTO {
-        TODO("Not yet implemented")
+    override suspend fun getOneById(id: Int): AlbumDTO? {
+        var response = retrofit.create(VinylsAlbumsAPI :: class.java).getOneById(id)
+        return response.body()
     }
 
     override suspend fun saveAlbum(album: AlbumDTO): AlbumDTO? {

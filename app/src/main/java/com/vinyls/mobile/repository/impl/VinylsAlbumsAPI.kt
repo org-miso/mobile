@@ -13,6 +13,9 @@ interface VinylsAlbumsAPI {
     @GET("/albums")
     suspend fun getAllAlbums(): Response<List<AlbumDTO>>
 
+    @GET("/albums/{albumId}")
+    suspend fun getOneById(@Path("albumId") albumId: Int): Response<AlbumDTO>
+
     @POST("/albums")
     suspend fun saveAlbum(@Body albumDTO: AlbumDTO): AlbumDTO
 

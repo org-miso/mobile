@@ -15,12 +15,22 @@ class AlbumsViewModel(): ViewModel() {
     private val albumRepository = AlbumRepositoryImpl()
 
     var albums = MutableLiveData<List<Album?>>()
+    var album = MutableLiveData<Album?>()
 
     fun getAllAlbums() {
         viewModelScope.launch {
             var albumsData: List<AlbumDTO>? = albumRepository.getAll()
             if (!albumsData.isNullOrEmpty()){
                 albums.postValue(albumsData!!.asSequence().map { a -> AlbumUtil().DTOtoEntity(a) }.toList())
+            }
+        }
+    }
+
+    fun getOneById(albumId: Int){
+        viewModelScope.launch {
+            var data: AlbumDTO? = albumRepository.getOneById(albumId)
+            if(data != null){
+                album.postValue(AlbumUtil().DTOtoEntity(data))
             }
         }
     }

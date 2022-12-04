@@ -12,7 +12,6 @@ class AlbumDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAlbumDetailBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
