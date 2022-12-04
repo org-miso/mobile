@@ -3,15 +3,11 @@ package com.vinyls.mobile.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.vinyls.mobile.databinding.ActivityAlbumDetailBinding
 import com.vinyls.mobile.databinding.ActivityTracksBinding
-import com.vinyls.mobile.model.Musician
 import com.vinyls.mobile.model.Track
-import com.vinyls.mobile.view.adapter.MusicianListAdapter
 import com.vinyls.mobile.view.adapter.TrackListAdapter
 
 class TracksActivity : AppCompatActivity() {

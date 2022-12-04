@@ -4,12 +4,10 @@ import android.R
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.vinyls.mobile.databinding.ActivityAlbumCreateBinding
-import com.vinyls.mobile.databinding.ActivityMainBinding
 import com.vinyls.mobile.dto.AlbumDTO
 import com.vinyls.mobile.viewmodel.AlbumsViewModel
 

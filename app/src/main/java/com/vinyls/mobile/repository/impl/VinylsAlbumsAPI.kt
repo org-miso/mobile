@@ -2,7 +2,6 @@ package com.vinyls.mobile.repository.impl
 
 import com.vinyls.mobile.dto.AlbumDTO
 import com.vinyls.mobile.dto.TrackDTO
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

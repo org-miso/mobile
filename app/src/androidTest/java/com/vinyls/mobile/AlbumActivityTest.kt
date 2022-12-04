@@ -2,10 +2,7 @@ package com.vinyls.mobile
 
 
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -23,7 +20,6 @@ class AlbumActivityTest {
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
-
     @Test
     fun testTitleDisplayAlbum(){
         onView(withText("Álbumes")).check(matches(isDisplayed()))
@@ -38,11 +34,13 @@ class AlbumActivityTest {
         Thread.sleep(5000)
     }
 
-
     @Test
-  fun testScrollListAlbums() {
-      onView(ViewMatchers.withId(R.id.loadingPanel)).perform(ViewActions.swipeDown())
-      Thread.sleep(5000)
+    fun testScrollListAlbums() {
+        Thread.sleep(5000)
+        onView(withId(R.id.recyclerViewAlbums)).perform(
+            ScrollToBottomAction()
+        )
+        Thread.sleep(5000)
   }
 
 

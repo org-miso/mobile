@@ -15,6 +15,7 @@
         android:textColor="#555555"
         android:textSize="30sp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="20dp"
@@ -51,7 +52,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="60dp"
-        android:layout_marginEnd="10dp"/>
+        android:layout_marginEnd="10dp"
+        android:contentDescription="Crear un album"
+        android:focusable="true" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

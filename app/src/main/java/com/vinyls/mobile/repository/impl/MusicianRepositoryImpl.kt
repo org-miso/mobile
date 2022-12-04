@@ -1,8 +1,6 @@
 package com.vinyls.mobile.repository.impl
 
-import com.vinyls.mobile.dto.AlbumDTO
 import com.vinyls.mobile.model.Musician
-import com.vinyls.mobile.repository.AlbumRepository
 import com.vinyls.mobile.repository.MusicianRepository
 import com.vinyls.mobile.repository.util.RetrofitHelper
 

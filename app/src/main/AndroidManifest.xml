@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Vinyls"
         tools:targetApi="31">
         <activity
+            android:name=".view.ArtistDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".view.CollectorDetailActivity"
             android:exported="false">
             <meta-data

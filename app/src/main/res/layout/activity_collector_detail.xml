@@ -116,7 +116,7 @@
         android:layout_marginBottom="40dp"/>
 
     <Button
-        android:id="@+id/buttonSong"
+        android:id="@+id/buttonBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/volver"
@@ -126,6 +126,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/corners"
+        app:backgroundTint="@color/cardview_dark_background"
         />
 
 

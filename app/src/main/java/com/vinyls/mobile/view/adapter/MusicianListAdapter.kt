@@ -1,17 +1,19 @@
 package com.vinyls.mobile.view.adapter
 
 import android.content.Context
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.vinyls.mobile.R
-import com.vinyls.mobile.model.Album
 import com.vinyls.mobile.model.Musician
+import com.vinyls.mobile.view.AlbumDetailActivity
+import com.vinyls.mobile.view.ArtistDetailActivity
 
 class MusicianListAdapter(
         val list:List<Musician?>,
@@ -39,6 +41,13 @@ class MusicianListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(list[position])
+        holder.itemView.setOnClickListener(){
+            val intent = Intent(this.context, ArtistDetailActivity::class.java)
+            intent.putExtra("title", list[position]?.name)
+            intent.putExtra("image", list[position]?.image)
+            intent.putExtra("description", list[position]?.description)
+            this.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
